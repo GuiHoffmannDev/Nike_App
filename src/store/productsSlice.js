@@ -11,8 +11,8 @@ export const productsSlice = createSlice({
     initialState,
     reducers: {
         setSelectedProduct: (state, action) => {
-            console.loog("state", state);
-            console.log("action", action);
+            const productId = action.payload;
+            state.selectedProduct = state.products.find((p) => p.id === productId);
         }
     }
 })
